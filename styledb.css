@@ -1,0 +1,237 @@
+html, body {
+    background: #000;
+    min-height:100%;
+    width:100%;
+    margin:0;
+    padding:0;
+}
+
+#head {
+    background: linear-gradient(to bottom right, #807E7E, #2E2E2E);
+    height: 160px;
+    padding-left: 80px;
+    margin:0 auto;
+}
+
+#head #cy {
+    float: right;
+    height: 150px;
+    padding-right: 80px;
+}
+
+#navcontainer {
+    background:linear-gradient(to bottom right, #E68A00, #7D4100);/*#C46500);*/
+    width: 12%;
+    padding-top: 10px;
+    position:absolute;
+    min-height: 140%;
+    border-top: 2px solid #000;
+}
+
+#nav {
+    margin:0;
+    list-style:none;
+}
+#nav li {
+    padding-bottom: 4px;
+    width:98%;
+}
+#nav a {
+    display:block;
+    text-align:center;
+    font-size: large;
+    color:#000;
+    line-height:3.2em;
+    text-decoration:none;
+    margin-left:-37px;
+    font-weight:bold;
+    border:2px solid #000;
+    //border-bottom:2px solid #000;
+    //border-left:2px solid #000;
+    //border-right:2px solid #000;
+}
+#nav a:hover, #nav a:focus {
+    background: #B86E00;
+    color: #FFF;
+    font-size: large;
+}
+
+#info {
+    width:auto;
+    color:#FFF;
+    margin-left: 13%;
+}
+
+#info a:link, a:visited {
+    color:#E68A00;
+}
+
+#info a:hover {
+    color:#7D4100;
+}
+
+#tocwrap1 {
+    margin-left:0 auto;
+    text-align:center;
+    width:100%;
+    height:60px;
+}
+
+#tocwrap2 {
+    max-width:100%;
+    height:60px;
+    margin-left: 2px;
+    margin-top: 2px;
+    float:left;
+    padding-left: 12%;
+}
+
+#wrapper {
+    margin:0 auto;
+    padding-left:12.1%;
+    min-height:100%;
+    display:inline-block;
+    width:auto;
+    min-width:100%;
+}
+
+#innerwrap {
+    background:linear-gradient(to bottom right, #000, #373838);
+    border: 3px solid #E68A00;
+    padding-left:1%;
+    padding-right:1%;
+    display:table;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    color:#FFF;
+    width:auto;
+    min-width:100%;
+    min-height:100%;
+}
+
+.trow {
+    display:table-row;
+}
+
+
+#main {
+    margin:0 auto;
+    display:table-cell;
+    width:auto;
+    text-align:center;
+}
+
+#title {
+    width:auto;
+    color:#FFF;
+}
+
+#title h1 {
+    padding-left:13%;
+    font-family:arial;
+    font-size:xx-large;
+    border-bottom: 2px solid #E68A00;
+}
+
+#disptable {
+    margin:0 auto;
+    background:linear-gradient(to bottom right, #FFF, #A8A8A8);
+    border: 5px solid #E68A00;
+    box-shadow: 5px 3px 2px #7D4100;
+    max-width:80%;
+    position:relative;
+}
+
+#disptable th, #disptable td {
+    border: 2px solid #E68A00;
+    padding:5px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
+
+#buttons {
+    display:table-cell;
+    position:relative;
+    margin:0;
+    text-align:left;
+}
+
+.export {
+    height:25px;
+    width:13em;
+    font-family:arial;
+    font-size:medium;
+    background:linear-gradient(to bottom right, #ABAAA9, #737373);
+}
+
+#copy-button.zeroclipboard-is-hover {
+    cursor:pointer;
+}
+
+#copy-button.zeroclipboard-is-active {
+    background:linear-gradient(to bottom right, #737373, #ABAAA9);
+}
+
+#downloadify {
+    background-color:#fff;
+}
+
+.arrowup, .arrowdown {
+    padding-left:5px;
+    width:10px;
+    height:10px;
+}
+
+
+ol#toc {
+    height: 2em;
+    list-style: none;
+    padding: 0;
+}
+
+ol#toc a {
+    color: #000;
+    display: block;
+    float: left;
+    text-decoration: none;
+    width: 500px;
+    font-size:large;
+    font-family:sans-serif;
+}
+
+ol#toc a:hover {
+    background-color: transparent!important;
+    background-position: 0 -120px;
+}
+
+ol#toc a:hover span {
+    background-position: 100% -120px;
+}
+
+ol#toc li {
+    float: left;
+    margin: 0 1px 0 0;
+    text-align: center;
+}
+
+ol#toc li.current a {
+    background-color: transparent!important;
+    background-position: 0 -60px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    font-size:large;
+    font-family:sans-serif;
+}
+
+ol#toc li.current span {
+    background-position: 100% -60px;
+}
+
+ol#toc span {
+    background: url(imgs/tabs.png) 100% 0;
+    display: block;
+    line-height: 44px;
+    width: 500px;
+}
