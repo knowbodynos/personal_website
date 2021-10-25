@@ -219,11 +219,11 @@ html, body {
     font-size:large;
 }
 
-#bar {
+.bar {
     border-top: 1px solid #E68A00;
 }
 
-#format {
+.format {
     color:#A1A1A1;
     float:left;
 }
