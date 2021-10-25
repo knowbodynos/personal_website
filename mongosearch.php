@@ -36,18 +36,20 @@
 <body>
 <div id="head">
 <a href="index.html"><img src="imgs/logo.png" title="Toric CY Database" height="150"></a>
-<a id="cy" title="Return to Portal" href="http://www.northeastern.edu/cydatabase"><img height="150px" style="PADDING-TOP: 5px" alt="Return to Portal" src="imgs/DBLINK.png"/></a>
+<a id="cy" title="Return to Portal" href="http://www.rossealtman.com/toriccy"><img height="150px" style="PADDING-TOP: 5px" alt="Return to Portal" src="imgs/DBLINK.png"/></a>
 </div>
 
 <div id="navcontainer">
 <ul id="nav">
-<li><a href="index.html">Toric CY Database</a></li>
-<li><a href="http://www.northeastern.edu/cydatabase/mw">Wiki Page</a></li>
-<li><a href="contact.html">Contact Info</a></li>
+<li><a href="index.html">Search Database</a></li>
+<li><a href="ftp://168.235.102.185">Download Database</a></li>
+<!--        <li><a href="contact.html">Contact Info</a></li>-->
 </ul>
 </div>
 <div id="title"><h1>Toric Calabi-Yau Database</h1></div>
 <div id="info">This database is based on <a href="http://arxiv.org/abs/1411.1418">arXiv:1411.1418</a>. Please <a href="http://inspirehep.net/record/1326443/export/hlxu">cite us</a>.
+<br>
+Contact <a href="mailto:ross@rossealtman.com?Subject=Toric%20Calabi-Yau%20Threefold%20Database">Ross Altman</a> with questions.
 <br>
 Constructed with support from the National Science Foundation under grant NSF/CCF-1048082, EAGER: CiC: A String Cartography.
 </div>
