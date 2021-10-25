@@ -21,7 +21,7 @@ html, body {
 
 #navcontainer {
     background:linear-gradient(to bottom right, #E68A00, #7D4100);/*#C46500);*/
-    width: 13%;
+    width: 14%;
     padding-top: 10px;
     position:absolute;
     min-height: 140%;
