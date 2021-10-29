@@ -133,7 +133,7 @@ html, body {
     border-bottom: 2px solid #E68A00;
 }
 
-.col ul, [class*="col-"] ul {
+.col ul {
     list-style:none;
     //padding: 10px;
     border: 5px solid #E68A00;
@@ -141,7 +141,7 @@ html, body {
     //height:825px;
 }
 
-.col ul p, [class*="col-"] ul p {
+.col ul p {
     font-weight:bold;
     font-family:arial;
     color:#A1A1A1;
