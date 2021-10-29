@@ -5,6 +5,8 @@
 <meta property="og:description" content="A database of Calabi-Yau 3-folds embedded as hypersurfaces in toric varieties.">
 <meta property="og:image" content="http://www.rossealtman.com/imgs/swirl.png">
 <script language="javascript" type="text/javascript" src="flot/jquery.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="shortcut icon" href="imgs/swirl.ico">
 <title>Toric CY Database</title>
@@ -47,6 +49,16 @@ function removeOption(ddl, value) {
     </ul>
 </div>
 <div id="title"><h1>Toric Calabi-Yau Database</h1></div>
+
+<div class="card text-white bg-primary mb-3">
+  <i class="far fa-newspaper"></i>
+  <h5 class="card-header">New!</h5>
+  <div class="card-body">
+    <h5 class="card-title">Orientifold CY3</h5>
+    <p class="card-text">We have added a large class of Calabi-Yau orientifolds, their orientifold planes, and even-/odd-parity Hodge numbers. This work will be coming soon to the arXiv, please cite us!</p>
+  </div>
+</div>
+
 <div id="info">This database is based on <a href="http://arxiv.org/abs/1411.1418">arXiv:1411.1418</a>. Please <a href="http://inspirehep.net/record/1326443/export/hlxu">cite us</a>.
 <br>
 Contact <a href="mailto:ross@rossealtman.com?Subject=Toric%20Calabi-Yau%20Threefold%20Database">Ross Altman</a> with questions.
@@ -340,5 +352,8 @@ counttoggle(document.getElementById('count').value);
     }
 }*/
 </script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
