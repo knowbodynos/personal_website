@@ -133,7 +133,7 @@ html, body {
     border-bottom: 2px solid #E68A00;
 }
 
-.col ul, .col-6 ul {
+.col ul {
     list-style:none;
     //padding: 10px;
     border: 5px solid #E68A00;
@@ -141,7 +141,22 @@ html, body {
     //height:825px;
 }
 
-.col ul p, .col-6 ul p {
+.col ul p {
+    font-weight:bold;
+    font-family:arial;
+    color:#A1A1A1;
+    border-bottom: 2px solid #E68A00;
+}
+
+.col-5 ul {
+    list-style:none;
+    //padding: 10px;
+    border: 5px solid #E68A00;
+    box-shadow: 5px 3px 2px #7D4100;
+    //height:825px;
+}
+
+.col-5 ul p {
     font-weight:bold;
     font-family:arial;
     color:#A1A1A1;
