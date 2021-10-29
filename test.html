@@ -82,7 +82,7 @@ Constructed with support from the National Science Foundation under grant NSF/CC
 <form name="mainform" action="db.php" method="post">
 
     <div class="row">
-        <div class="col-5" style="text-align:right;">
+        <div class="col-2" style="text-align:right;">
             <ul>
                 <p>Enter search parameters:</p>
                 <div class="format">Format: Integers</div>
@@ -175,7 +175,7 @@ Constructed with support from the National Science Foundation under grant NSF/CC
                 <li><input type="checkbox" class="geomprops" name="geomprops[9]" value="EXPLICITSWISSCHEESE" title="Explicit Swiss Cheese Solutions"> Explicit Swiss Cheese Solutions</li>
             </ul>
         </div>
-        <div class="col" style="text-align:left;">
+        <div class="col-1" style="text-align:left;">
             <ul>
                 <p>Select Triangulation-Specific Properties:</p>
                 <li><input type="checkbox" class="triangprops" name="triangprops[0]" value="TRIANGN" title="Triangulation # (within geometry)">Triangulation # (within geometry)</li>
@@ -199,7 +199,7 @@ Constructed with support from the National Science Foundation under grant NSF/CC
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col-1">
             <p>Count Only:</p>
             <select name="count" id="count" onchange="counttoggle(this.value)">
             <option value="NONE">--</option>
@@ -208,7 +208,7 @@ Constructed with support from the National Science Foundation under grant NSF/CC
             <option value="TRIANG">Triangulations</option>
             </select>
         </div>
-        <div class="col">
+        <div class="col-1">
             Match: &nbsp;<input type="text" id="limit" name="limit" value="0">&nbsp;
             <select name="matches" id="matches">
             <option value="POLY">Polytopes</option>
