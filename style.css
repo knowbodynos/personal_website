@@ -252,7 +252,7 @@ html, body {
     width:400px;
     height:600px;
     //float:left;
-    display:inline;
+    //display:inline;
     margin: 0 auto;
     text-align:left;
 }
