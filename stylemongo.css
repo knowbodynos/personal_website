@@ -21,7 +21,7 @@ html, body {
 
 #navcontainer {
     background:linear-gradient(to bottom right, #E68A00, #7D4100);/*#C46500);*/
-    width: 14%;
+    width: 12%;
     padding-top: 10px;
     position:absolute;
     height:100vh;
@@ -57,7 +57,7 @@ html, body {
 #info {
     width:auto;
     color:#FFF;
-    margin-left: 15%;
+    margin-left: 13%;
 }
 
 #info a:link, a:visited {
@@ -127,7 +127,7 @@ html, body {
 }
 
 #title h1 {
-    padding-left:14%;
+    padding-left:13%;
     font-family:arial;
     font-size:xx-large;
     border-bottom: 2px solid #E68A00;
