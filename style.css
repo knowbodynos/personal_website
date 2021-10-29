@@ -133,13 +133,13 @@ html, body {
     border-bottom: 2px solid #E68A00;
 }
 
-.col ul {
+.mycol ul {
     list-style:none;
     border: 5px solid #E68A00;
     box-shadow: 5px 3px 2px #7D4100;
 }
 
-.col ul p {
+.mycol ul p {
     font-weight:bold;
     font-family:arial;
     color:#A1A1A1;
@@ -149,12 +149,8 @@ html, body {
 .no-gutters {
   margin-right: 0;
   margin-left: 0;
-
-  > .col,
-  > [class*="col-"] {
-    padding-right: 0;
-    padding-left: 0;
-  }
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .propcol2 li {
