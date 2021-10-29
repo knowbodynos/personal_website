@@ -134,7 +134,7 @@ html, body {
 }
 
 .col {
-    //float:left;
+    float:left;
     margin-left: 2px;
     //width:400px;
 }
