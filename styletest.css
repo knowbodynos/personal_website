@@ -163,6 +163,17 @@ html, body {
     border-bottom: 2px solid #E68A00;
 }
 
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
 .propcol2 li {
     padding-bottom:12px;/*8px;*/
 }
