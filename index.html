@@ -81,211 +81,148 @@ Constructed with support from the National Science Foundation under grant NSF/CC
 <div id="main">
 <form name="mainform" action="db.php" method="post">
 
-<div class="col">
-<div id="dbsearch">
-<ul>
-<p>Enter search parameters:</p>
-<div class="format">Format: Integers</div>
-<br><br>
-<li>Polytope ID #: <input type="text" name="POLYID" oninput="togglecheck('POLYID','polyprops[0]')"></li>
-<div class="bar"></div>
-<br>
-<div class="format">Format: Integers</div>
-<br><br>
-<li>h11: <input type="text" name="H11" oninput="togglecheck('H11','polyprops[2]')"></li>
-<li>h21: <input type="text" name="H21" oninput="togglecheck('H21','polyprops[3]')"></li>
-<li>Euler #: <input type="text" name="EULER" oninput="togglecheck('EULER','polyprops[4]')"></li>
-<li>Favorable?: <input type="text" name="FAV" oninput="togglecheck('FAV','polyprops[5]')"></li>
-<li>Fundamental Group: <input type="text" name="FUNDGP" oninput="togglecheck('FUNDGP','polyprops[19]')"></li>
-<div class="bar"></div>
-<br>
-<div class="format">Format: Integers</div>
-<br><br>
-<li>Polytope #: <input type="text" name="POLYN" oninput="togglecheck('POLYN','polyprops[1]')"></li>
-<li>Geometry # (within polytope): <input type="text" name="GEOMN" oninput="togglecheck('GEOMN','geomprops[0]')"></li>
-<li>Triangulation # (within geometry): <input type="text" name="TRIANGN" oninput="togglecheck('TRIANGN','triangprops[0]')"></li>
-<li>Triangulation # (within polytope): <input type="text" name="ALLTRIANGN" oninput="togglecheck('ALLTRIANGN','triangprops[1]')"></li>
-<div class="bar"></div>
-<br>
-<div class="format">Format: Integers</div>
-<br><br>
-<li># of Geometries (within polytope): <input type="text" name="NGEOMS" oninput="togglecheck('NGEOMS','polyprops[20]')"></li>
-<li># of Triangulations (within geometry): <input type="text" name="NTRIANGS" oninput="togglecheck('NTRIANGS','geomprops[1]')"></li>
-<li># of Triangulations (within polytope): <input type="text" name="NALLTRIANGS" oninput="togglecheck('NALLTRIANGS','polyprops[21]')"></li>
-<div class="bar"></div>
-<br>
-<div class="format">Format: Integers</div>
-<br><br>
-<li># of Newton Polytope Vertices: <input type="text" name="NNVERTS" oninput="togglecheck('NNVERTS','polyprops[6]')"></li>
-<li># of Newton Polytope Points: <input type="text" name="NNPOINTS" oninput="togglecheck('NNPOINTS','polyprops[7]')"></li>
-<li># of Dual Polytope Vertices: <input type="text" name="NDVERTS" oninput="togglecheck('NDVERTS','polyprops[9]')"></li>
-<li># of Dual Polytope Points: <input type="text" name="NDPOINTS" oninput="togglecheck('NDPOINTS','polyprops[10]')"></li>
-<div class="bar"></div>
-<br>
-<div class="format">Format: {{...},{...},...,{...}}</div>
-<br>
-<div class="format">(Mathematica matrix)</div>
-<br><br>
-<li>(Resolved) Weight Matrix: <input type="text" name="CWS"></li><!-- oninput="togglecheck('CWS','polyprops[13]');togglecheck('CWS','polyprops[14]');"-->
-<li>Newton Polytope Vertex Matrix: <input type="text" name="NVERTS" oninput="togglecheck('NVERTS','polyprops[8]')"></li>
-<li>Dual Polytope (Resolved) Vertex Matrix: <input type="text" name="DVERTS"></li><!-- oninput="togglecheck('DVERTS','polyprops[11]');togglecheck('DVERTS','polyprops[12]');"-->
-<li>CY 2nd Chern Numbers: <input type="text" name="CHERN2XNUMS" oninput="togglecheck('CHERN2XNUMS','geomprops[3]')"></li>
-<li>Intersection Polynomial or Tensor: <input type="text" name="ITENSXJ"></li><!-- oninput="togglecheck('IPOLYXJ','geomprops[4]');togglecheck('ITENSXJ','geomprops[5]');"-->
-</ul>
-</div>
-
-</div>
-
-<div class="col">
-<div class="propcol">
-<ul>
-<p>Select Polytope Properties:</p>
-<li><input type="checkbox" class="polyprops" name="polyprops[0]" value="POLYID" title="Polytope ID #">Polytope ID #</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[1]" value="POLYN" title="Polytope #" >Polytope #</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[2]" value="H11" title="H11">H11</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[3]" value="H21" title="H21">H21</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[4]" value="EULER" title="Euler #">Euler #</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[5]" value="FAV" title="Favorable?">Favorable?</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[6]" value="NNVERTS" title="# of Newton Polytope Vertices"># of Newton Polytope Vertices</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[7]" value="NNPOINTS" title="# of Newton Polytope Points"># of Newton Polytope Points</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[8]" value="NVERTS" title="Newton Polytope Vertex Matrix">Newton Polytope Vertex Matrix</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[9]" value="NDVERTS" title="# of Dual Polytope Vertices"># of Dual Polytope Vertices</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[10]" value="NDPOINTS" title="# of Dual Polytope Points"># of Dual Polytope Points</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[11]" value="DVERTS" title="Dual Polytope Vertex Matrix">Dual Polytope Vertex Matrix</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[12]" value="DRESVERTS" title="Dual Polytope Resolved Vertex Matrix">Dual Polytope Resolved Vertex Matrix</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[13]" value="CWS" title="Weight Matrix">Weight Matrix</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[14]" value="RESCWS" title="Resolved Weight Matrix">Resolved Weight Matrix</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[15]" value="DTOJ" title="Toric to Basis Divisor Transformation Matrix">Toric to Basis Divisor Transformation Matrix</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[16]" value="BASIS" title="Basis from Toric Divisors">Basis from Toric Divisors</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[17]" value="JTOD" title="Basis to Toric Divisor Transformation Matrix">Basis to Toric Divisor Transformation Matrix</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[18]" value="INVBASIS" title="Toric from Basis Divisors">Toric from Basis Divisors</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[19]" value="FUNDGP" title="Fundamental Group">Fundamental Group</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[20]" value="NGEOMS" title="# of Geometries (within polytope)"># of Geometries (within polytope)</li>
-<li><input type="checkbox" class="polyprops" name="polyprops[21]" value="NALLTRIANGS" title="# of Triangulations (within polytope)"># of Triangulations (within polytope)</li>
-</ul>
-</div>
-
-<div class="extracol">
-<div class="extra">
-<!--<input type="checkbox" name="count" value="true" onclick="document.getElementById('limit').disabled=this.checked;">Count Only-->
-Count Only:&nbsp;&nbsp;
-<select name="count" id="count" onchange="counttoggle(this.value)">
-<option value="NONE">--</option>
-<option value="POLY">Polytopes</option>
-<option value="GEOM">Geometries</option>
-<option value="TRIANG">Triangulations</option>
-</select>
-<br><br>
-</div>
-<br>
-<!--<div class="extra">
-Match by:&nbsp;&nbsp;
-<select name="polymatchby" id="polymatchby">
-
-<option value="POLYID" selected>Polytope ID #</option>
-<option value="POLYN">Polytope #</option>
-<option value="H11">H11</option>
-<option value="H21">H21</option>
-<option value="EULER">Euler #</option>
-<option value="FAV">Favorable?</option>
-<option value="NNVERTS"># of Newton Polytope Vertices</option>
-<option value="NNPOINTS"># of Newton Polytope Points</option>
-<option value="NDVERTS"># of Dual Polytope Vertices</option>
-<option value="NDPOINTS"># of Dual Polytope Points</option>
-<option value="FUNDGP">Fundamental Group</option>
-<option value="NGEOMS"># of Geometries (within polytope)</option>
-<option value="NALLTRIANGS"># of Triangulations (within polytope)</option>
-<option value="GEOMN">Geometry # (within polytope)</option>
-<option value="NTRIANGS"># of Triangulations (within geometry)</option>
-<option value="TRIANGN">Triangulation # (within geometry)</option>
-<option value="ALLTRIANGN">Triangulation # (within polytope)</option>
-
-</select>
-
-<br><br>
-
-<input type="checkbox" name="reverse" id="reverse" value="reversed">Reverse
-
-<select name="polyorient" id="polyorient">
-<option value="1">ASC</option>
-<option value="-1">DESC</option>
-</select>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<select name="geommatchby" id="geommatchby">
-</select>
-<select name="geomorient" id="geomorient">
-<option value="1">ASC</option>
-<option value="-1">DESC</option>
-</select>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<select name="triangmatchby" id="triangmatchby">
-</select>
-<select name="triangorient" id="triangorient">
-<option value="1">ASC</option>
-<option value="-1">DESC</option>
-</select>
-</div>-->
-</div>
-
-</div>
-
-<div class="col">
-<div class="propcol">
-<ul>
-<p>Select CY Geometry Properties:</p>
-<li><input type="checkbox" class="geomprops" name="geomprops[0]" value="GEOMN" title="Geometry # (within polytope)">Geometry # (within polytope)</li>
-<li><input type="checkbox" class="geomprops" name="geomprops[1]" value="NTRIANGS" title="# of Triangulations (within geometry)"># of Triangulations (within geometry)</li>
-<li><input type="checkbox" class="geomprops" name="geomprops[2]" value="CHERN2XJ" title="CY 2nd Chern Class (Basis)">CY 2nd Chern Class (Basis)</li>
-<li><input type="checkbox" class="geomprops" name="geomprops[3]" value="CHERN2XNUMS" title="CY 2nd Chern Numbers">CY 2nd Chern Numbers</li>
-<li><input type="checkbox" class="geomprops" name="geomprops[4]" value="IPOLYXJ" title="CY Intersection Polynomial (Basis)">CY Intersection Polynomial (Basis)</li>
-<li><input type="checkbox" class="geomprops" name="geomprops[5]" value="ITENSXJ" title="CY Intersection Tensor (Basis)">CY Intersection Tensor (Basis)</li>
-<li><input type="checkbox" class="geomprops" name="geomprops[6]" value="MORIMAT" title="CY Mori Cone Matrix">CY Mori Cone Matrix</li>
-<li><input type="checkbox" class="geomprops" name="geomprops[7]" value="KAHLERMAT" title="CY Kahler Cone Matrix">CY Kahler Cone Matrix</li>
-<li><input type="checkbox" class="geomprops" name="geomprops[8]" value="TORICSWISSCHEESE" title="Toric Swiss Cheese Solutions"> Toric Swiss Cheese Solutions</li>
-<li><input type="checkbox" class="geomprops" name="geomprops[9]" value="EXPLICITSWISSCHEESE" title="Explicit Swiss Cheese Solutions"> Explicit Swiss Cheese Solutions</li>
-</ul>
-</div>
-<div class="extracol">
-<div class="extra">
-Match: &nbsp;<input type="text" id="limit" name="limit" value="0">&nbsp;
-<select name="matches" id="matches">
-<option value="POLY">Polytopes</option>
-<option value="GEOM">Geometries</option>
-<option value="TRIANG">Triangulations</option>
-</select>
-<br>
-<p>(0 = Unconstrained)</p>
-<br>
-</div>
-<br><br>
-<div id="dbsubmit"><input type="submit" value="Search!"></div>
-</div>
-</div>
-
-<div class="propcol">
-    <ul>
-    <p>Select Triangulation-Specific Properties:</p>
-        <li><input type="checkbox" class="triangprops" name="triangprops[0]" value="TRIANGN" title="Triangulation # (within geometry)">Triangulation # (within geometry)</li>
-        <li><input type="checkbox" class="triangprops" name="triangprops[1]" value="ALLTRIANGN" title="Triangulation # (within polytope)">Triangulation # (within polytope)</li>
-        <li><input type="checkbox" class="triangprops" name="triangprops[2]" value="TRIANG" title="Triangulation">Triangulation</li>
-        <li><input type="checkbox" class="triangprops" name="triangprops[3]" value="SRIDEAL" title="Stanley-Reisner Ideal">Stanley-Reisner Ideal</li>
-        <li><input type="checkbox" class="triangprops" name="triangprops[4]" value="CHERNAD" title="Ambient Chern Classes (Toric)">Ambient Chern Classes (Toric)</li>
-        <li><input type="checkbox" class="triangprops" name="triangprops[5]" value="CHERNAD" title="Ambient Chern Classes (Basis)">Ambient Chern Classes (Basis)</li>
-        <li><input type="checkbox" class="triangprops" name="triangprops[6]" value="CHERN2XD" title="CY 2nd Chern Class (Toric)">CY 2nd Chern Class (Toric)</li>
-        <li><input type="checkbox" class="triangprops" name="triangprops[7]" value="CHERN3XD" title="CY 3rd Chern Class (Toric)">CY 3rd Chern Class (Toric)</li>
-        <li><input type="checkbox" class="triangprops" name="triangprops[8]" value="CHERN3XJ" title="CY 3rd Chern Class (Basis)">CY 3rd Chern Class (Basis)</li>
-        <li><input type="checkbox" class="triangprops" name="triangprops[9]" value="IPOLYAD" title="Ambient Intersection Polynomial (Toric)">Ambient Intersection Polynomial (Toric)</li>
-        <li><input type="checkbox" class="triangprops" name="triangprops[10]" value="ITENSAD" title="Ambient Intersection Tensor (Toric)">Ambient Intersection Tensor (Toric)</li>
-        <li><input type="checkbox" class="triangprops" name="triangprops[11]" value="IPOLYAJ" title="Ambient Intersection Polynomial (Basis)">Ambient Intersection Polynomial (Basis)</li>
-        <li><input type="checkbox" class="triangprops" name="triangprops[12]" value="ITENSAJ" title="Ambient Intersection Tensor (Basis)">Ambient Intersection Tensor (Basis)</li>
-        <li><input type="checkbox" class="triangprops" name="triangprops[13]" value="IPOLYXD" title="CY Intersection Polynomial (Toric)">CY Intersection Polynomial (Toric)</li>
-        <li><input type="checkbox" class="triangprops" name="triangprops[14]" value="ITENSXD" title="CY Intersection Tensor (Toric)">CY Intersection Tensor (Toric)</li>
-        <li><input type="checkbox" class="triangprops" name="triangprops[15]" value="MORIMATP" title="Phase Mori Cone Matrix">Phase Mori Cone Matrix</li>
-        <li><input type="checkbox" class="triangprops" name="triangprops[16]" value="KAHLERMATP" title="Phase Kahler Cone Matrix">Phase Kahler Cone Matrix</li>
-    </ul>
-</div>
+    <div class="row no-gutters">
+        <div class="col-5" style="text-align:right;">
+            <ul>
+                <p>Enter search parameters:</p>
+                <div class="format">Format: Integers</div>
+                <br><br>
+                <li>Polytope ID #: <input type="text" name="POLYID" oninput="togglecheck('POLYID','polyprops[0]')"></li>
+                <div class="bar"></div>
+                <br>
+                <div class="format">Format: Integers</div>
+                <br><br>
+                <li>h11: <input type="text" name="H11" oninput="togglecheck('H11','polyprops[2]')"></li>
+                <li>h21: <input type="text" name="H21" oninput="togglecheck('H21','polyprops[3]')"></li>
+                <li>Euler #: <input type="text" name="EULER" oninput="togglecheck('EULER','polyprops[4]')"></li>
+                <li>Favorable?: <input type="text" name="FAV" oninput="togglecheck('FAV','polyprops[5]')"></li>
+                <li>Fundamental Group: <input type="text" name="FUNDGP" oninput="togglecheck('FUNDGP','polyprops[19]')"></li>
+                <div class="bar"></div>
+                <br>
+                <div class="format">Format: Integers</div>
+                <br><br>
+                <li>Polytope #: <input type="text" name="POLYN" oninput="togglecheck('POLYN','polyprops[1]')"></li>
+                <li>Geometry # (within polytope): <input type="text" name="GEOMN" oninput="togglecheck('GEOMN','geomprops[0]')"></li>
+                <li>Triangulation # (within geometry): <input type="text" name="TRIANGN" oninput="togglecheck('TRIANGN','triangprops[0]')"></li>
+                <li>Triangulation # (within polytope): <input type="text" name="ALLTRIANGN" oninput="togglecheck('ALLTRIANGN','triangprops[1]')"></li>
+                <div class="bar"></div>
+                <br>
+                <div class="format">Format: Integers</div>
+                <br><br>
+                <li># of Geometries (within polytope): <input type="text" name="NGEOMS" oninput="togglecheck('NGEOMS','polyprops[20]')"></li>
+                <li># of Triangulations (within geometry): <input type="text" name="NTRIANGS" oninput="togglecheck('NTRIANGS','geomprops[1]')"></li>
+                <li># of Triangulations (within polytope): <input type="text" name="NALLTRIANGS" oninput="togglecheck('NALLTRIANGS','polyprops[21]')"></li>
+                <div class="bar"></div>
+                <br>
+                <div class="format">Format: Integers</div>
+                <br><br>
+                <li># of Newton Polytope Vertices: <input type="text" name="NNVERTS" oninput="togglecheck('NNVERTS','polyprops[6]')"></li>
+                <li># of Newton Polytope Points: <input type="text" name="NNPOINTS" oninput="togglecheck('NNPOINTS','polyprops[7]')"></li>
+                <li># of Dual Polytope Vertices: <input type="text" name="NDVERTS" oninput="togglecheck('NDVERTS','polyprops[9]')"></li>
+                <li># of Dual Polytope Points: <input type="text" name="NDPOINTS" oninput="togglecheck('NDPOINTS','polyprops[10]')"></li>
+                <div class="bar"></div>
+                <br>
+                <div class="format">Format: {{...},{...},...,{...}}</div>
+                <br>
+                <div class="format">(Mathematica matrix)</div>
+                <br><br>
+                <li>(Resolved) Weight Matrix: <input type="text" name="CWS"></li><!-- oninput="togglecheck('CWS','polyprops[13]');togglecheck('CWS','polyprops[14]');"-->
+                <li>Newton Polytope Vertex Matrix: <input type="text" name="NVERTS" oninput="togglecheck('NVERTS','polyprops[8]')"></li>
+                <li>Dual Polytope (Resolved) Vertex Matrix: <input type="text" name="DVERTS"></li><!-- oninput="togglecheck('DVERTS','polyprops[11]');togglecheck('DVERTS','polyprops[12]');"-->
+                <li>CY 2nd Chern Numbers: <input type="text" name="CHERN2XNUMS" oninput="togglecheck('CHERN2XNUMS','geomprops[3]')"></li>
+                <li>Intersection Polynomial or Tensor: <input type="text" name="ITENSXJ"></li><!-- oninput="togglecheck('IPOLYXJ','geomprops[4]');togglecheck('ITENSXJ','geomprops[5]');"-->
+            </ul>
+        </div>
+        <div class="col" style="text-align:left;">
+            <ul>
+                <p>Select Polytope Properties:</p>
+                <li><input type="checkbox" class="polyprops" name="polyprops[0]" value="POLYID" title="Polytope ID #">Polytope ID #</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[1]" value="POLYN" title="Polytope #" >Polytope #</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[2]" value="H11" title="H11">H11</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[3]" value="H21" title="H21">H21</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[4]" value="EULER" title="Euler #">Euler #</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[5]" value="FAV" title="Favorable?">Favorable?</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[6]" value="NNVERTS" title="# of Newton Polytope Vertices"># of Newton Polytope Vertices</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[7]" value="NNPOINTS" title="# of Newton Polytope Points"># of Newton Polytope Points</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[8]" value="NVERTS" title="Newton Polytope Vertex Matrix">Newton Polytope Vertex Matrix</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[9]" value="NDVERTS" title="# of Dual Polytope Vertices"># of Dual Polytope Vertices</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[10]" value="NDPOINTS" title="# of Dual Polytope Points"># of Dual Polytope Points</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[11]" value="DVERTS" title="Dual Polytope Vertex Matrix">Dual Polytope Vertex Matrix</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[12]" value="DRESVERTS" title="Dual Polytope Resolved Vertex Matrix">Dual Polytope Resolved Vertex Matrix</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[13]" value="CWS" title="Weight Matrix">Weight Matrix</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[14]" value="RESCWS" title="Resolved Weight Matrix">Resolved Weight Matrix</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[15]" value="DTOJ" title="Toric to Basis Divisor Transformation Matrix">Toric to Basis Divisor Transformation Matrix</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[16]" value="BASIS" title="Basis from Toric Divisors">Basis from Toric Divisors</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[17]" value="JTOD" title="Basis to Toric Divisor Transformation Matrix">Basis to Toric Divisor Transformation Matrix</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[18]" value="INVBASIS" title="Toric from Basis Divisors">Toric from Basis Divisors</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[19]" value="FUNDGP" title="Fundamental Group">Fundamental Group</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[20]" value="NGEOMS" title="# of Geometries (within polytope)"># of Geometries (within polytope)</li>
+                <li><input type="checkbox" class="polyprops" name="polyprops[21]" value="NALLTRIANGS" title="# of Triangulations (within polytope)"># of Triangulations (within polytope)</li>
+            </ul>
+        </div>
+        <div class="col" style="text-align:left;">
+            <ul>
+                <p>Select CY Geometry Properties:</p>
+                <li><input type="checkbox" class="geomprops" name="geomprops[0]" value="GEOMN" title="Geometry # (within polytope)">Geometry # (within polytope)</li>
+                <li><input type="checkbox" class="geomprops" name="geomprops[1]" value="NTRIANGS" title="# of Triangulations (within geometry)"># of Triangulations (within geometry)</li>
+                <li><input type="checkbox" class="geomprops" name="geomprops[2]" value="CHERN2XJ" title="CY 2nd Chern Class (Basis)">CY 2nd Chern Class (Basis)</li>
+                <li><input type="checkbox" class="geomprops" name="geomprops[3]" value="CHERN2XNUMS" title="CY 2nd Chern Numbers">CY 2nd Chern Numbers</li>
+                <li><input type="checkbox" class="geomprops" name="geomprops[4]" value="IPOLYXJ" title="CY Intersection Polynomial (Basis)">CY Intersection Polynomial (Basis)</li>
+                <li><input type="checkbox" class="geomprops" name="geomprops[5]" value="ITENSXJ" title="CY Intersection Tensor (Basis)">CY Intersection Tensor (Basis)</li>
+                <li><input type="checkbox" class="geomprops" name="geomprops[6]" value="MORIMAT" title="CY Mori Cone Matrix">CY Mori Cone Matrix</li>
+                <li><input type="checkbox" class="geomprops" name="geomprops[7]" value="KAHLERMAT" title="CY Kahler Cone Matrix">CY Kahler Cone Matrix</li>
+                <li><input type="checkbox" class="geomprops" name="geomprops[8]" value="TORICSWISSCHEESE" title="Toric Swiss Cheese Solutions"> Toric Swiss Cheese Solutions</li>
+                <li><input type="checkbox" class="geomprops" name="geomprops[9]" value="EXPLICITSWISSCHEESE" title="Explicit Swiss Cheese Solutions"> Explicit Swiss Cheese Solutions</li>
+            </ul>
+        </div>
+        <div class="col" style="text-align:left;">
+            <ul>
+                <p>Select Triangulation-Specific Properties:</p>
+                <li><input type="checkbox" class="triangprops" name="triangprops[0]" value="TRIANGN" title="Triangulation # (within geometry)">Triangulation # (within geometry)</li>
+                <li><input type="checkbox" class="triangprops" name="triangprops[1]" value="ALLTRIANGN" title="Triangulation # (within polytope)">Triangulation # (within polytope)</li>
+                <li><input type="checkbox" class="triangprops" name="triangprops[2]" value="TRIANG" title="Triangulation">Triangulation</li>
+                <li><input type="checkbox" class="triangprops" name="triangprops[3]" value="SRIDEAL" title="Stanley-Reisner Ideal">Stanley-Reisner Ideal</li>
+                <li><input type="checkbox" class="triangprops" name="triangprops[4]" value="CHERNAD" title="Ambient Chern Classes (Toric)">Ambient Chern Classes (Toric)</li>
+                <li><input type="checkbox" class="triangprops" name="triangprops[5]" value="CHERNAD" title="Ambient Chern Classes (Basis)">Ambient Chern Classes (Basis)</li>
+                <li><input type="checkbox" class="triangprops" name="triangprops[6]" value="CHERN2XD" title="CY 2nd Chern Class (Toric)">CY 2nd Chern Class (Toric)</li>
+                <li><input type="checkbox" class="triangprops" name="triangprops[7]" value="CHERN3XD" title="CY 3rd Chern Class (Toric)">CY 3rd Chern Class (Toric)</li>
+                <li><input type="checkbox" class="triangprops" name="triangprops[8]" value="CHERN3XJ" title="CY 3rd Chern Class (Basis)">CY 3rd Chern Class (Basis)</li>
+                <li><input type="checkbox" class="triangprops" name="triangprops[9]" value="IPOLYAD" title="Ambient Intersection Polynomial (Toric)">Ambient Intersection Polynomial (Toric)</li>
+                <li><input type="checkbox" class="triangprops" name="triangprops[10]" value="ITENSAD" title="Ambient Intersection Tensor (Toric)">Ambient Intersection Tensor (Toric)</li>
+                <li><input type="checkbox" class="triangprops" name="triangprops[11]" value="IPOLYAJ" title="Ambient Intersection Polynomial (Basis)">Ambient Intersection Polynomial (Basis)</li>
+                <li><input type="checkbox" class="triangprops" name="triangprops[12]" value="ITENSAJ" title="Ambient Intersection Tensor (Basis)">Ambient Intersection Tensor (Basis)</li>
+                <li><input type="checkbox" class="triangprops" name="triangprops[13]" value="IPOLYXD" title="CY Intersection Polynomial (Toric)">CY Intersection Polynomial (Toric)</li>
+                <li><input type="checkbox" class="triangprops" name="triangprops[14]" value="ITENSXD" title="CY Intersection Tensor (Toric)">CY Intersection Tensor (Toric)</li>
+                <li><input type="checkbox" class="triangprops" name="triangprops[15]" value="MORIMATP" title="Phase Mori Cone Matrix">Phase Mori Cone Matrix</li>
+                <li><input type="checkbox" class="triangprops" name="triangprops[16]" value="KAHLERMATP" title="Phase Kahler Cone Matrix">Phase Kahler Cone Matrix</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>Count Only:</p>
+            <select name="count" id="count" onchange="counttoggle(this.value)">
+            <option value="NONE">--</option>
+            <option value="POLY">Polytopes</option>
+            <option value="GEOM">Geometries</option>
+            <option value="TRIANG">Triangulations</option>
+            </select>
+        </div>
+        <div class="col">
+            Match: &nbsp;<input type="text" id="limit" name="limit" value="0">&nbsp;
+            <select name="matches" id="matches">
+            <option value="POLY">Polytopes</option>
+            <option value="GEOM">Geometries</option>
+            <option value="TRIANG">Triangulations</option>
+            </select>
+            <br>
+            <p>(0 = Unconstrained)</p>
+            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div id="dbsubmit"><input type="submit" value="Search!"></div>
+    </div>
 
 </form>
 

@@ -133,36 +133,45 @@ html, body {
     border-bottom: 2px solid #E68A00;
 }
 
-.col {
-    float:left;
-    margin-left: 2px;
-    //width:400px;
-}
-
-.propcol2 {
-    text-align:left;
-    //width:360px;
-    //float:left;
-    display:inline;
-    margin-top: 0 auto;
-    //margin-left: 2px;
-    //position:relative;
-    //z-index:2;
-}
-
-.propcol2 ul {
+.col ul {
     list-style:none;
-    padding: 10px;
+    //padding: 10px;
     border: 5px solid #E68A00;
     box-shadow: 5px 3px 2px #7D4100;
-    height:825px;
+    //height:825px;
 }
 
-.propcol2 ul p {
+.col ul p {
     font-weight:bold;
     font-family:arial;
     color:#A1A1A1;
     border-bottom: 2px solid #E68A00;
+}
+
+.col-5 ul {
+    list-style:none;
+    //padding: 10px;
+    border: 5px solid #E68A00;
+    box-shadow: 5px 3px 2px #7D4100;
+    //height:825px;
+}
+
+.col-5 ul p {
+    font-weight:bold;
+    font-family:arial;
+    color:#A1A1A1;
+    border-bottom: 2px solid #E68A00;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 .propcol2 li {
