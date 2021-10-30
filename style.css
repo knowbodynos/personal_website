@@ -133,13 +133,26 @@ html, body {
     border-bottom: 2px solid #E68A00;
 }
 
-.col ul, [class*="col-"] ul {
-    list-style: none !important;
+.col ul {
+    list-style: none;
+    border: 5px solid #E68A00;
+    box-shadow: 5px 3px 2px #7D4100;
+}
+
+.col-5 ul {
+    list-style: none;
     border: 5px solid #E68A00;
     box-shadow: 5px 3px 2px #7D4100;
 }
 
 .col ul p, [class*="col-"] ul p {
+    font-weight:bold;
+    font-family:arial;
+    color:#A1A1A1;
+    border-bottom: 2px solid #E68A00;
+}
+
+.col ul p {
     font-weight:bold;
     font-family:arial;
     color:#A1A1A1;
