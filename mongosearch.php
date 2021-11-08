@@ -42,7 +42,7 @@
 <div id="navcontainer">
 <ul id="nav">
 <li><a href="index.html">Search Database</a></li>
-<li><a href="ftp://168.235.102.185">Download Database</a></li>
+<li><a href="https://app.box.com/s/ch4w5gy1wv9dv11ptf314u7ovj2x4vig">Download Database</a></li>
 <!--        <li><a href="contact.html">Contact Info</a></li>-->
 </ul>
 </div>
@@ -239,13 +239,20 @@ Match: &nbsp;<input type="text" id="limit" name="limit" value=<?php if(isset($_G
 <?php
 if(isset($_GET['mongocode']) and isset($_GET['submit'])){
 	try {
-        MongoCursor::$timeout = -1;
-        $m = new MongoClient("mongodb://frontend:password@127.0.0.1:28555/ToricCY");
-		$db = $m->selectDB("ToricCY");
-		$polycoll = $db->selectCollection("POLY");
-        $geomcoll = $db->selectCollection("GEOM");
-        $triangcoll = $db->selectCollection("TRIANG");
-        $swisscheesecoll = $db->selectCollection("SWISSCHEESE");
+//         MongoCursor::$timeout = -1;
+//         $m = new MongoClient("mongodb://frontend:password@168.235.102.185:27017/ToricCY");
+// 		$db = $m->selectDB("ToricCY");
+// 		$polycoll = $db->selectCollection("POLY");
+//         $geomcoll = $db->selectCollection("GEOM");
+//         $triangcoll = $db->selectCollection("TRIANG");
+//         $swisscheesecoll = $db->selectCollection("SWISSCHEESE");
+        require_once __DIR__ . "/vendor/autoload.php";
+        $m = new MongoDB\Client("mongodb://frontend:password@168.235.102.185:27017/ToricCY");
+        $db = $m->ToricCY;
+        $polycoll = $db->POLY;
+        $geomcoll = $db->GEOM;
+        $triangcoll = $db->TRIANG;
+        $swisscheesecoll = $db->SWISSCHEESE;
 
         $limit=intval($_GET['limit']);
         $limit=($limit==0 ? -1 : $limit);
