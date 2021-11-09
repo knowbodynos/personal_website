@@ -378,13 +378,16 @@ if(isset($_GET['mongocode']) and isset($_GET['submit'])){
             foreach ($geomcurs as $geomdoc) {
                 $geomprinted=false;
                 $swisscheesecurs=$swisscheesecoll->find(array_merge($swisscheesemongosearch,array('POLYID'=>$polydoc['POLYID'],'GEOMN'=>$geomdoc['GEOMN'])),$swisscheesemongoprops);
-                if (empty($swisscheesemongosearch) and !$swisscheesecurs->hasNext()) {
+//                 if (empty($swisscheesemongosearch) and !$swisscheesecurs->hasNext()) {
+//                     $swisscheesecurs=array(array());
+//                 }
+                if (empty($swisscheesecurs)) {
                     $swisscheesecurs=array(array());
                 }
                 $triangcurs=$triangcoll->find(array_merge($triangmongosearch,array('POLYID'=>$polydoc['POLYID'],'GEOMN'=>$geomdoc['GEOMN'])),$triangmongoprops);
                 $swisscheesecount=1;
+//                 echo json_encode($swisscheesedoc, JSON_PRETTY_PRINT);
                 foreach ($swisscheesecurs as $swisscheesedoc) {
-                    echo json_encode($swisscheesedoc, JSON_PRETTY_PRINT);
                     foreach ($triangcurs as $triangdoc) {
                         if ($count=="NONE") {
                             print("<tr class=\"row".$rowcount."\">");
