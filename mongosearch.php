@@ -370,21 +370,21 @@ if(isset($_GET['mongocode']) and isset($_GET['submit'])){
         $geomstop=false;
         $triangstop=false;
         $plotvals=array();
-        $polycurs=$polycoll->find($polymongosearch,array_merge($polymongoprops,array('POLYID'=>1,'H11'=>1,'H21'=>1,'EULER'=>1)));
+        $polycurs=$polycoll->find($polymongosearch,array_merge($polymongoprops,array('POLYID'=>1,'H11'=>1,'H21'=>1,'EULER'=>1)))->toArray();
         foreach ($polycurs as $polydoc) {
             $polyprinted=false;
             array_push($plotvals,array("POLYID"=>$polydoc['POLYID'],"H11"=>$polydoc['H11'],"H21"=>$polydoc['H21'],"EULER"=>$polydoc['EULER']));
-            $geomcurs=$geomcoll->find(array_merge($geommongosearch,array('POLYID'=>$polydoc['POLYID'])),array_merge($geommongoprops,array('GEOMN'=>1)));
+            $geomcurs=$geomcoll->find(array_merge($geommongosearch,array('POLYID'=>$polydoc['POLYID'])),array_merge($geommongoprops,array('GEOMN'=>1)))->toArray();
             foreach ($geomcurs as $geomdoc) {
                 $geomprinted=false;
-                $swisscheesecurs=$swisscheesecoll->find(array_merge($swisscheesemongosearch,array('POLYID'=>$polydoc['POLYID'],'GEOMN'=>$geomdoc['GEOMN'])),$swisscheesemongoprops);
+                $swisscheesecurs=$swisscheesecoll->find(array_merge($swisscheesemongosearch,array('POLYID'=>$polydoc['POLYID'],'GEOMN'=>$geomdoc['GEOMN'])),$swisscheesemongoprops)->toArray();
 //                 if (empty($swisscheesemongosearch) and !$swisscheesecurs->hasNext()) {
 //                     $swisscheesecurs=array(array());
 //                 }
                 if (empty($swisscheesecurs)) {
                     $swisscheesecurs=array(array());
                 }
-                $triangcurs=$triangcoll->find(array_merge($triangmongosearch,array('POLYID'=>$polydoc['POLYID'],'GEOMN'=>$geomdoc['GEOMN'])),$triangmongoprops);
+                $triangcurs=$triangcoll->find(array_merge($triangmongosearch,array('POLYID'=>$polydoc['POLYID'],'GEOMN'=>$geomdoc['GEOMN'])),$triangmongoprops)->toArray();
                 $swisscheesecount=1;
 //                 echo json_encode($swisscheesedoc, JSON_PRETTY_PRINT);
                 foreach ($swisscheesecurs as $swisscheesedoc) {
