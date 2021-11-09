@@ -47,7 +47,7 @@
 </ul>
 </div>
 <div id="title"><h1>Toric Calabi-Yau Database</h1></div>
-<div id="info">This database is based on <a href="http://arxiv.org/abs/1411.1418">arXiv:1411.1418</a>. Please <a href="http://inspirehep.net/record/1326443/export/hlxu">cite us</a>.
+<div id="info">This database is based on: <a href="https://arxiv.org/abs/1411.1418">arXiv:1411.1418</a>, <a href="https://arxiv.org/abs/1706.09070">arXiv:1706.09070</a>, and most recently <a href="https://arxiv.org/abs/2111.03078">arXiv:2111.03078</a>. Please cite us!
 <br>
 Contact <a href="mailto:ross@rossealtman.com?Subject=Toric%20Calabi-Yau%20Threefold%20Database">Ross Altman</a> with questions.
 <br>
@@ -361,6 +361,7 @@ if(isset($_GET['mongocode']) and isset($_GET['submit'])){
             }
         }
         print("</tr>\n</thead>\n<tbody>\n");
+        echo "<script>alert('$geommongosearch');</script>";
 
         $rowcount=1;
         $collcount=1;
