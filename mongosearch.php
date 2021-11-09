@@ -372,6 +372,7 @@ if(isset($_GET['mongocode']) and isset($_GET['submit'])){
         $plotvals=array();
         $polycurs=$polycoll->find($polymongosearch,array_merge($polymongoprops,array('POLYID'=>1,'H11'=>1,'H21'=>1,'EULER'=>1)));
         foreach ($polycurs as $polydoc) {
+            echo json_encode($polydoc, JSON_PRETTY_PRINT);
             $polyprinted=false;
             array_push($plotvals,array("POLYID"=>$polydoc['POLYID'],"H11"=>$polydoc['H11'],"H21"=>$polydoc['H21'],"EULER"=>$polydoc['EULER']));
             $geomcurs=$geomcoll->find(array_merge($geommongosearch,array('POLYID'=>$polydoc['POLYID'])),array_merge($geommongoprops,array('GEOMN'=>1)));
