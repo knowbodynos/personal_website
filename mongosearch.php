@@ -361,9 +361,6 @@ if(isset($_GET['mongocode']) and isset($_GET['submit'])){
             }
         }
         print("</tr>\n</thead>\n<tbody>\n");
-        echo json_encode($polymongosearch, JSON_PRETTY_PRINT);
-        echo json_encode($geommongosearch, JSON_PRETTY_PRINT);
-        echo json_encode($triangmongosearch, JSON_PRETTY_PRINT);
 
         $rowcount=1;
         $collcount=1;
@@ -386,7 +383,6 @@ if(isset($_GET['mongocode']) and isset($_GET['submit'])){
                 }
                 $triangcurs=$triangcoll->find(array_merge($triangmongosearch,array('POLYID'=>$polydoc['POLYID'],'GEOMN'=>$geomdoc['GEOMN'])),$triangmongoprops)->toArray();
                 $swisscheesecount=1;
-//                 echo json_encode($swisscheesedoc, JSON_PRETTY_PRINT);
                 foreach ($swisscheesecurs as $swisscheesedoc) {
                     foreach ($triangcurs as $triangdoc) {
                         if ($count=="NONE") {
