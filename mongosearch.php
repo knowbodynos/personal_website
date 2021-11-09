@@ -196,7 +196,7 @@ Sort by:&nbsp;&nbsp;
 </select>
 </div>-->
 <div class="extra">
-Match: &nbsp;<input type="text" id="limit" name="limit" value=<?php if(isset($_GET['limit'])){echo $_GET['limit'];}else{echo "1";} ?>>&nbsp;
+Match: &nbsp;<input type="text" id="limit" name="limit" value=<?php if(isset($_GET['limit'])){echo $_GET['limit'];}else{echo "0";} ?>>&nbsp;
 <select name="matches" id="matches">
 <option value="POLY" <?php if($_GET['matches']=='POLY' or empty($_GET)){echo "selected='selected'";}?>>Polytopes</option>
 <option value="GEOM" <?php if($_GET['matches']=='GEOM'){echo "selected='selected'";}?>>Geometries</option>
@@ -361,7 +361,9 @@ if(isset($_GET['mongocode']) and isset($_GET['submit'])){
             }
         }
         print("</tr>\n</thead>\n<tbody>\n");
-        echo "<script>alert('$geommongosearch');</script>";
+        echo json_encode($polymongosearch, JSON_PRETTY_PRINT);
+        echo json_encode($geommongosearch, JSON_PRETTY_PRINT);
+        echo json_encode($triangmongosearch, JSON_PRETTY_PRINT);
 
         $rowcount=1;
         $collcount=1;
