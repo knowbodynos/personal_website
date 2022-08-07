@@ -12,9 +12,6 @@
 <script language="javascript" type="text/javascript" src="flot/jquery.flot.coordinate.js"></script>
 <!--<script type="text/javascript" src="downloadify/js/swfobject.js"></script>-->
 <!--<script type="text/javascript" src="downloadify/js/downloadify.min.js"></script>-->
-
-<script type="text/javascript" src="table2CSV/table2CSV.js"></script>
-
 <!--<script type="text/javascript" src="sorttable/sorttable.js"></script>-->
 <link rel="stylesheet" href="tablesorter/css/theme.rea.css">
 <script type="text/javascript" src="jquery/jquery-2.1.3.min.js"></script>
@@ -82,11 +79,65 @@ function copyToClipboard(id) {
     document.execCommand("Copy");
 }
 
-//New Download Function
-function getCSVData(){
-     var csv_value=$('#disptable1').table2CSV({delivery:'value'});
-     $("#csv_text").val(csv_value); 
+//Download table to CSV
+function tableToCSV() {
+
+// Variable to store the final csv data
+var csv_data = [];
+
+// Get each row data
+var rows = document.getElementsByTagName('tr');
+for (var i = 0; i < rows.length; i++) {
+
+    // Get each column data
+    var cols = rows[i].querySelectorAll('td,th');
+
+    // Stores each csv row data
+    var csvrow = [];
+    for (var j = 0; j < cols.length; j++) {
+
+        // Get the text data of each cell of
+        // a row and push it to csvrow
+        csvrow.push(cols[j].innerText);
+    }
+
+    // Combine each column value with comma
+    csv_data.push(csvrow.join(","));
 }
+// combine each row data with new line character
+csv_data = csv_data.join('\n');
+
+/* We will use this function later to download
+the data in a csv file downloadCSVFile(csv_data);
+*/
+downloadCSVFile(csv_data);
+}
+
+function downloadCSVFile(csv_data) {
+
+// Create CSV file object and feed our
+// csv_data into it
+CSVFile = new Blob([csv_data], { type: "text/csv" });
+
+// Create to temporary link to initiate
+// download process
+var temp_link = document.createElement('a');
+
+// Download csv file
+temp_link.download = "toriccy.csv";
+var url = window.URL.createObjectURL(CSVFile);
+temp_link.href = url;
+
+// This link should not be displayed
+temp_link.style.display = "none";
+document.body.appendChild(temp_link);
+
+// Automatically click the link to trigger download
+temp_link.click();
+document.body.removeChild(temp_link);
+}
+
+
 
 function SortColCond(x,y) {
     if (isNaN(x) && isNaN(y)) {
@@ -239,10 +290,7 @@ Constructed with support from the National Science Foundation under grant NSF/CC
 <button id="copy-button" onclick="copyToClipboard('disptable1')" class="export">Copy table to clipboard.</button>
 <br><br>
 <div id="savewrap">
-<form action="getCSV.php" method="post">
-<input type="hidden" name="csv_text" id="csv_text">
-<button id="save-button" onclick="getCSVData()" class="export">Save table to file.</button>
-</form>
+<button id="save-button" onclick="tableToCSV()" class="export">Save table to file.</button>
 <!--<p id="downloadify"></p>-->
 </div>
 </div>

@@ -13,7 +13,6 @@
 <script language="javascript" type="text/javascript" src="zeroclipboard/dist/ZeroClipboard.js"></script>
 <!--<script type="text/javascript" src="downloadify/js/swfobject.js"></script>-->
 <!--<script type="text/javascript" src="downloadify/js/downloadify.min.js"></script>-->
-<script type="text/javascript" src="table2CSV/table2CSV.js"></script>
 <!--<script type="text/javascript" src="sorttable/sorttable.js"></script>-->
 <script src="codemirror/lib/codemirror.js"></script>
 <link rel="stylesheet" href="codemirror/lib/codemirror.css">
@@ -223,10 +222,7 @@ Match: &nbsp;<input type="text" id="limit" name="limit" value=<?php if(isset($_G
 <button id="copy-button" class="export">Copy table to clipboard.</button>
 <br><br>
 <div id="savewrap">
-<form action="getCSV.php" method ="post">
-<input type="hidden" name="csv_text" id="csv_text">
-<button id="save-button" onclick="getCSVData()" class="export">Save table to file.</button>
-</form>
+<button id="save-button" onclick="tableToCSV()" class="export">Save table to file.</button>
 <!--<p id="downloadify"></p>-->
 </div>
 </div>
@@ -669,12 +665,65 @@ saveButton.css( { 'position':'absolute', 'top':saveWrapPosition.top, 'left':save
 </script>
 
 <script type="text/javascript">
-//New Download Function
-function getCSVData(){
-	 var csv_value=$('#disptable1').table2CSV({delivery:'value'});
-	 $("#csv_text").val(csv_value);	
+
+//Download table to CSV
+function tableToCSV() {
+
+// Variable to store the final csv data
+var csv_data = [];
+
+// Get each row data
+var rows = document.getElementsByTagName('tr');
+for (var i = 0; i < rows.length; i++) {
+
+    // Get each column data
+    var cols = rows[i].querySelectorAll('td,th');
+
+    // Stores each csv row data
+    var csvrow = [];
+    for (var j = 0; j < cols.length; j++) {
+
+        // Get the text data of each cell of
+        // a row and push it to csvrow
+        csvrow.push(cols[j].innerText);
+    }
+
+    // Combine each column value with comma
+    csv_data.push(csvrow.join(","));
 }
-</script>
+// combine each row data with new line character
+csv_data = csv_data.join('\n');
+
+/* We will use this function later to download
+the data in a csv file downloadCSVFile(csv_data);
+*/
+downloadCSVFile(csv_data);
+}
+
+function downloadCSVFile(csv_data) {
+
+// Create CSV file object and feed our
+// csv_data into it
+CSVFile = new Blob([csv_data], { type: "text/csv" });
+
+// Create to temporary link to initiate
+// download process
+var temp_link = document.createElement('a');
+
+// Download csv file
+temp_link.download = "toriccy.csv";
+var url = window.URL.createObjectURL(CSVFile);
+temp_link.href = url;
+
+// This link should not be displayed
+temp_link.style.display = "none";
+document.body.appendChild(temp_link);
+
+// Automatically click the link to trigger download
+temp_link.click();
+document.body.removeChild(temp_link);
+}
+
 
 <!--<script type="text/javascript">
 window.onload = function() { 
