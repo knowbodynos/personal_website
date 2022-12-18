@@ -89,6 +89,12 @@ var csv_data = [];
 var rows = document.getElementsByTagName('tr');
 for (var i = 0; i < rows.length; i++) {
 
+    // Skip first row with grouped columns,
+    // and row corresponding to search boxes
+    if ((i == 0) || (i == 2)) {
+        continue;
+    }
+
     // Get each column data
     var cols = rows[i].querySelectorAll('td,th');
 
